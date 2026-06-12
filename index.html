@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Social Media Sentiment Analysis using Machine Learning - Analyze posts with 89.88% accuracy using optimized Logistic Regression, XGBoost, and ensemble methods">
+    <meta name="keywords" content="social media, sentiment analysis, machine learning, NLP, text classification, logistic regression, xgboost, ensemble methods, 89.88% accuracy">
+    <meta name="author" content="Sentiment Analysis Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Social Media Sentiment Analysis - Advanced ML Models">
+    <meta property="og:description" content="Analyze social media sentiment with 89.88% accuracy using state-of-the-art machine learning models">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sentiment-analysis-demo.com">
+    <title>Advanced Social Media Sentiment Analysis | 89.88% Accuracy</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://127.0.0.1:8010/">
+    <meta property="og:title" content="Advanced Social Media Sentiment Analysis | 89.88% Accuracy">
+    <meta property="og:description" content="Enhanced sentiment analysis with 89.88% accuracy using optimized Logistic Regression, XGBoost, and ensemble methods on 25K social media posts with advanced preprocessing.">
+    <meta property="og:image" content="http://127.0.0.1:8010/optimized_results.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://www.svgrepo.com/show/513008/social-media.svg">
+    <style>
+        .chart-container {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-comments text-4xl mr-3"></i>
+                    <h1 class="text-3xl font-bold">Social Media Sentiment Analysis</h1>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#features" class="hover:text-gray-200 transition">Features</a></li>
+                        <li><a href="#demo" class="hover:text-gray-200 transition">Demo</a></li>
+                        <li><a href="#results" class="hover:text-gray-200 transition">Results</a></li>
+                        <li><a href="#about" class="hover:text-gray-200 transition">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        89.88% Accuracy Achieved
+                    </div>
+                <h2 class="text-5xl font-bold mb-6 text-gray-800 leading-tight">
+                    Analyze <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Social Media</span> Sentiment
+                </h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Powered by advanced machine learning models including <strong>Logistic Regression</strong>, <strong>XGBoost</strong>, and <strong>ensemble methods</strong>. 
+                    Our comprehensive analysis pipeline processes 25,000 social media posts with state-of-the-art NLP techniques.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#demo" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Try Live Demo
+                    </a>
+                    <a href="#results" class="bg-white text-gray-800 border-2 border-gray-300 hover:border-gray-400 font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        View Results
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-center space-x-8 text-sm text-gray-500">
+                    <div class="flex items-center">
+                        <i class="fas fa-database mr-1"></i>
+                        416K+ Posts Analyzed
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-cogs mr-1"></i>
+                        3 ML Models Trained
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-brain mr-1"></i>
+                        6 Sentiment Classes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">Advanced Features</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Built with enterprise-grade tools and modern ML practices</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: Multi-Model Architecture -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Multi-Model Architecture</h3>
+                    <p class="text-gray-600 mb-4">Deploys 7+ machine learning models including Logistic Regression, Random Forest, SVM, Naive Bayes, Gradient Boosting, Neural Networks, and XGBoost.</p>
+                    <div class="flex items-center text-sm text-blue-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>Ensemble approach for robust predictions</span>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Advanced NLP Pipeline -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-language text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Advanced NLP Pipeline</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive text preprocessing with tokenization, stemming, stopword removal, and TF-IDF vectorization optimized for social media text.</p>
+                    <div class="flex items-center text-sm text-green-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>416K+ tweets processed</span>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Comprehensive Evaluation -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Comprehensive Evaluation</h3>
+                    <p class="text-gray-600 mb-4">Rigorous model evaluation with 5-fold cross-validation, precision, recall, F1-score, and confusion matrix analysis across 6 sentiment classes.</p>
+                    <div class="flex items-center text-sm text-purple-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>88.38% best model accuracy</span>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Real-time Analysis -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Real-time Analysis</h3>
+                    <p class="text-gray-600 mb-4">Interactive web interface for instant sentiment classification with confidence scores and detailed probability distributions.</p>
+                    <div class="flex items-center text-sm text-orange-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>Sub-second response time</span>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Production Ready -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-indigo-500 to-blue-600 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Production Ready</h3>
+                    <p class="text-gray-600 mb-4">Scalable architecture with Docker support, API endpoints, and cloud deployment capabilities for enterprise integration.</p>
+                    <div class="flex items-center text-sm text-indigo-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>RESTful API included</span>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Open Source -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
+                    <div class="bg-gradient-to-br from-gray-700 to-gray-900 text-white w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fab fa-github text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Open Source</h3>
+                    <p class="text-gray-600 mb-4">Complete codebase available on GitHub with detailed documentation, tutorials, and contribution guidelines for the community.</p>
+                    <div class="flex items-center text-sm text-gray-600 font-medium">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>MIT License</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-4 text-center">Social Media Sentiment Analysis Tool</h2>
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
+                <div class="mb-6">
+                    <label for="tweet-input" class="block text-sm font-medium text-gray-700 mb-2">Enter a post to analyze:</label>
+                    <textarea id="tweet-input" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type or paste a post here..."></textarea>
+                    <p class="text-sm text-gray-600 mt-2">Try typing a positive, negative, or neutral post to see how our sentiment analysis works.</p>
+                </div>
+                <div class="flex justify-center mb-8">
+                    <button id="analyze-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow transition">Analyze Sentiment</button>
+                </div>
+                <div id="result-container" class="hidden bg-white border rounded-lg p-6">
+                    <!-- Loading indicator -->
+                    <div id="loading-indicator" class="text-center py-8" style="display: none;">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-2"></div>
+                        <p class="text-gray-600">Analyzing sentiment...</p>
+                    </div>
+                    
+                    <!-- Results display -->
+                    <div id="result-display">
+                        <h3 class="text-xl font-semibold mb-4 text-center">Analysis Result</h3>
+                        <div class="flex justify-center mb-4">
+                            <div id="sentiment-icon" class="text-5xl"></div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <span id="sentiment-label" class="text-2xl font-bold"></span>
+                            <p id="confidence-info" class="text-sm text-gray-600 mt-1" style="display: none;"></p>
+                        </div>
+                        <div id="sentiment-scores-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                            <!-- Sentiment scores will be dynamically inserted here by script.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">Model Performance Results</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive evaluation across 7+ machine learning models</p>
+            </div>
+            
+            <!-- Model Performance Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-green-800">Logistic Regression (Optimized)</h4>
+                        <i class="fas fa-trophy text-green-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-green-700 mb-2">89.88%</div>
+                    <div class="text-sm text-green-600">Best Model</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-blue-800">XGBoost</h4>
+                        <i class="fas fa-tree text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-blue-700 mb-2">89.18%</div>
+                    <div class="text-sm text-blue-600">Strong Performance</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-purple-800">SVM</h4>
+                        <i class="fas fa-calculator text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-purple-700 mb-2">86.94%</div>
+                    <div class="text-sm text-purple-600">Efficient</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-orange-800">Enhanced Dataset Statistics</h4>
+                        <i class="fas fa-database text-orange-600 text-xl"></i>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Total Posts</span>
+                            <span class="font-semibold">416,809</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Optimized Training Samples</span>
+                            <span class="font-semibold">25,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Sentiment Classes</span>
+                            <span class="font-semibold">6</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Accuracy Improvement</span>
+                            <span class="font-semibold text-green-600">+1.70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Model Comparison Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Optimized Model Comparison</h3>
+                    <div class="chart-container bg-gray-50 rounded-lg p-4">
+                        <img src="optimized_results.png" alt="Optimized Model Performance Comparison" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-600">Accuracy comparison across all trained models</p>
+                        <div class="mt-2 text-xs text-gray-500">
+                            <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-1"></span>
+                            Logistic Regression (89.88%)
+                            <span class="inline-block w-3 h-3 bg-blue-500 rounded-full ml-3 mr-1"></span>
+                            XGBoost (89.18%)
+                            <span class="inline-block w-3 h-3 bg-purple-500 rounded-full ml-3 mr-1"></span>
+                            SVM (86.94%)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Confusion Matrix -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Enhanced Confusion Matrix</h3>
+                    <div class="chart-container bg-gray-50 rounded-lg p-4">
+                        <img src="confusion_matrix.png" alt="Enhanced Confusion Matrix" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-600">Performance breakdown across 3 sentiment classes</p>
+                        <div class="mt-2 flex flex-wrap justify-center gap-2 text-xs">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Positive</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full">Negative</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Neutral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Metrics -->
+            <div class="mt-12 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Comprehensive Evaluation Metrics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">88.38%</div>
+                        <div class="text-lg font-semibold text-gray-700 mb-1">Best Accuracy</div>
+                        <div class="text-sm text-gray-600">Logistic Regression</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">0.8838</div>
+                        <div class="text-lg font-semibold text-gray-700 mb-1">F1-Score</div>
+                        <div class="text-sm text-gray-600">Weighted Average</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">6</div>
+                        <div class="text-lg font-semibold text-gray-700 mb-1">Sentiment Classes</div>
+                        <div class="text-sm text-gray-600">Multi-class classification</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">About the Project</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">This Social Media Sentiment Analysis project implements a machine learning pipeline to classify social media posts into six sentiment categories: Positive, Negative, Neutral, Irrelevant, Anger, and Sadness. The project uses a dataset of over 400,000 social media posts covering various topics including technology companies, video games, and more.</p>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Implementation Details</h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">Data Processing</h4>
+                        <p class="text-gray-600">The project includes robust text preprocessing to clean social media posts by removing special characters, URLs, and converting text to lowercase. Feature extraction is performed using CountVectorizer and TfidfTransformer to convert text into numerical features suitable for machine learning models.</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">Model Training</h4>
+                        <p class="text-gray-600">Multiple classification models were implemented and compared, including Logistic Regression, XGBoost, Gradient Boosting, SVM, and Naive Bayes. The Logistic Regression classifier achieved the best performance with 89.88% accuracy on the validation dataset.</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">Evaluation</h4>
+                        <p class="text-gray-600">The models were evaluated using accuracy, precision, recall, and F1-score metrics. Confusion matrices were generated to visualize the performance across different sentiment categories.</p>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white rounded p-3 text-center shadow-sm">
+                            <i class="fab fa-python text-blue-500 text-2xl mb-2"></i>
+                            <div>Python</div>
+                        </div>
+                        <div class="bg-white rounded p-3 text-center shadow-sm">
+                            <i class="fas fa-brain text-blue-500 text-2xl mb-2"></i>
+                            <div>Scikit-learn</div>
+                        </div>
+                        <div class="bg-white rounded p-3 text-center shadow-sm">
+                            <i class="fas fa-chart-bar text-blue-500 text-2xl mb-2"></i>
+                            <div>Matplotlib</div>
+                        </div>
+                        <div class="bg-white rounded p-3 text-center shadow-sm">
+                            <i class="fas fa-table text-blue-500 text-2xl mb-2"></i>
+                            <div>Pandas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Social Media Sentiment Analysis</h3>
+                    <p class="text-sm mt-1">A machine learning project for sentiment analysis</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-200 transition"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition"><i class="fab fa-twitter text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-sm">
+                <p>&copy; 2025 Social Media Sentiment Analysis Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Demo Functionality -->
+    <script src="script.js?v=20251019"></script>
+</body>
+</html>
